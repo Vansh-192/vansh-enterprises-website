@@ -9,8 +9,8 @@
  * Leads emailed: enquiries@vanshenterprises.net
  *
  * Required environment variables (set in Railway dashboard):
- *   GMAIL_USER  — your Gmail address (e.g. yourname@gmail.com)
- *   GMAIL_PASS  — Gmail App Password (16-char, NOT your regular password)
+ *   EMAIL_USER  — enquiries@vanshenterprises.net
+ *   EMAIL_PASS  — your Namecheap Private Email password
  */
 
 const express    = require('express');
@@ -23,12 +23,14 @@ const PORT = process.env.PORT || 3000;
 const LEADS_FILE    = path.join(__dirname, 'leads.json');
 const NOTIFY_EMAIL  = 'enquiries@vanshenterprises.net';
 
-// ─── Email Transporter (Gmail) ────────────────────────────────────────────────
+// ─── Email Transporter (Namecheap Private Email) ─────────────────────────────
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host:   'mail.privateemail.com',  // Namecheap Private Email SMTP host
+  port:   465,                      // SSL port
+  secure: true,                     // true = SSL (port 465)
   auth: {
-    user: process.env.GMAIL_USER,   // set in Railway env vars
-    pass: process.env.GMAIL_PASS,   // Gmail App Password (not regular password)
+    user: process.env.EMAIL_USER,   // enquiries@vanshenterprises.net
+    pass: process.env.EMAIL_PASS,   // your Namecheap Private Email password
   }
 });
 
@@ -161,7 +163,7 @@ app.post('/api/contact', async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from:    `"Vansh Enterprises Website" <${process.env.GMAIL_USER}>`,
+      from:    `"Vansh Enterprises" <${process.env.EMAIL_USER}>`,
       to:      NOTIFY_EMAIL,
       replyTo: lead.email,
       subject: `New RFQ: ${lead.company} — ${lead.requirementType || 'General Enquiry'}`,
