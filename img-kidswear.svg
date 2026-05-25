@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF5E6"/>
+      <stop offset="100%" stop-color="#FFE0BC"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4845F"/>
+      <stop offset="100%" stop-color="#E8673F"/>
+    </linearGradient>
+    <linearGradient id="jeans" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5B8DD9"/>
+      <stop offset="100%" stop-color="#3A6AB8"/>
+    </linearGradient>
+    <linearGradient id="dress" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#9B59D8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bg)"/>
+
+  <!-- Subtle polka dots background -->
+  <circle cx="60" cy="60" r="8" fill="#F4845F" opacity="0.15"/>
+  <circle cx="160" cy="30" r="5" fill="#5B8DD9" opacity="0.15"/>
+  <circle cx="700" cy="40" r="9" fill="#C084FC" opacity="0.15"/>
+  <circle cx="760" cy="120" r="6" fill="#F4845F" opacity="0.12"/>
+  <circle cx="50" cy="360" r="10" fill="#5B8DD9" opacity="0.12"/>
+  <circle cx="730" cy="370" r="7" fill="#C084FC" opacity="0.12"/>
+  <circle cx="400" cy="20" r="5" fill="#FFD166" opacity="0.2"/>
+
+  <!-- === LEFT: JEANS === -->
+  <!-- Waistband -->
+  <rect x="158" y="140" width="104" height="22" rx="8" fill="#3A6AB8"/>
+  <!-- Belt loops -->
+  <rect x="178" y="136" width="10" height="14" rx="2" fill="#2A5A9F"/>
+  <rect x="232" y="136" width="10" height="14" rx="2" fill="#2A5A9F"/>
+  <!-- Body -->
+  <rect x="160" y="158" width="100" height="110" rx="6" fill="url(#jeans)"/>
+  <!-- Center seam -->
+  <line x1="210" y1="158" x2="210" y2="268" stroke="#2A5A9F" stroke-width="2" opacity="0.5"/>
+  <!-- Left leg -->
+  <rect x="162" y="264" width="42" height="72" rx="6" fill="url(#jeans)"/>
+  <!-- Right leg -->
+  <rect x="216" y="264" width="42" height="72" rx="6" fill="url(#jeans)"/>
+  <!-- Pocket stitch -->
+  <path d="M 170 175 Q 185 168 200 175" stroke="#2A5A9F" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <!-- Button -->
+  <circle cx="210" cy="150" r="5" fill="#2A5A9F"/>
+  <circle cx="210" cy="150" r="2.5" fill="#1A4A8F"/>
+
+  <!-- === CENTER: T-SHIRT === -->
+  <!-- Left sleeve -->
+  <path d="M 290 120 L 340 100 L 340 170 L 300 185" fill="url(#shirt)" stroke="#E8673F" stroke-width="1"/>
+  <!-- Right sleeve -->
+  <path d="M 510 120 L 460 100 L 460 170 L 500 185" fill="url(#shirt)" stroke="#E8673F" stroke-width="1"/>
+  <!-- Body -->
+  <rect x="338" y="100" width="124" height="195" rx="10" fill="url(#shirt)"/>
+  <!-- Collar -->
+  <ellipse cx="400" cy="102" rx="44" ry="20" fill="#FFF5E6"/>
+  <ellipse cx="400" cy="104" rx="34" ry="14" fill="url(#shirt)"/>
+  <!-- Chest pocket -->
+  <rect x="350" y="140" width="34" height="28" rx="4" fill="#E8673F"/>
+  <line x1="350" y1="152" x2="384" y2="152" stroke="#F4845F" stroke-width="1.5"/>
+  <!-- Hem line -->
+  <line x1="338" y1="283" x2="462" y2="283" stroke="#E8673F" stroke-width="2" opacity="0.5"/>
+
+  <!-- === RIGHT: DRESS === -->
+  <!-- Bodice -->
+  <rect x="582" y="100" width="80" height="90" rx="8" fill="url(#dress)"/>
+  <!-- Neckline -->
+  <path d="M 582 108 Q 622 125 662 108" fill="#FFF5E6"/>
+  <path d="M 590 110 Q 622 128 654 110" fill="none" stroke="#9B59D8" stroke-width="1.5"/>
+  <!-- Skirt - A-line -->
+  <path d="M 575 188 L 562 335 L 680 335 L 667 188 Z" fill="url(#dress)"/>
+  <!-- Waist seam -->
+  <line x1="575" y1="190" x2="667" y2="190" stroke="#9B59D8" stroke-width="2" opacity="0.6"/>
+  <!-- Skirt pleat lines -->
+  <line x1="595" y1="198" x2="578" y2="332" stroke="#9B59D8" stroke-width="1.2" opacity="0.35"/>
+  <line x1="625" y1="195" x2="621" y2="332" stroke="#9B59D8" stroke-width="1.2" opacity="0.35"/>
+  <line x1="655" y1="198" x2="664" y2="332" stroke="#9B59D8" stroke-width="1.2" opacity="0.35"/>
+  <!-- Bow/ribbon -->
+  <path d="M 605 192 Q 622 184 622 192 Q 622 184 639 192 Q 622 200 605 192 Z" fill="#FFD166" opacity="0.9"/>
+  <circle cx="622" cy="192" r="5" fill="#FFB700"/>
+
+  <!-- === ACCENT STARS === -->
+  <!-- Star top-left -->
+  <polygon points="100,55 104,68 118,68 107,76 111,90 100,82 89,90 93,76 82,68 96,68" fill="#FFD166" opacity="0.75"/>
+  <!-- Star top-right -->
+  <polygon points="700,55 703,64 713,64 705,70 708,80 700,74 692,80 695,70 687,64 697,64" fill="#F4845F" opacity="0.6"/>
+  <!-- Small hearts -->
+  <path d="M 480,52 Q 487,44 494,52 Q 501,44 508,52 Q 508,62 494,70 Q 480,62 480,52 Z" fill="#F4845F" opacity="0.55"/>
+  <path d="M 292,348 Q 297,342 302,348 Q 307,342 312,348 Q 312,355 302,361 Q 292,355 292,348 Z" fill="#C084FC" opacity="0.5"/>
+
+  <!-- Ground shadow -->
+  <ellipse cx="210" cy="345" rx="58" ry="10" fill="#D4A882" opacity="0.2"/>
+  <ellipse cx="400" cy="308" rx="70" ry="10" fill="#D4A882" opacity="0.2"/>
+  <ellipse cx="622" cy="348" rx="60" ry="10" fill="#D4A882" opacity="0.2"/>
+
+  <!-- Label strip bottom -->
+  <rect x="0" y="386" width="800" height="14" fill="#E8C8A0" opacity="0.35"/>
+</svg>

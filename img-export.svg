@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EEF2F8"/>
+      <stop offset="100%" stop-color="#DDE4F0"/>
+    </linearGradient>
+    <linearGradient id="box1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5E6C8"/>
+      <stop offset="100%" stop-color="#E8D0A0"/>
+    </linearGradient>
+    <linearGradient id="box1side" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D8BE88"/>
+      <stop offset="100%" stop-color="#C8A870"/>
+    </linearGradient>
+    <linearGradient id="box2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8F5EC"/>
+      <stop offset="100%" stop-color="#C8E6D0"/>
+    </linearGradient>
+    <linearGradient id="box2side" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A8D4B4"/>
+      <stop offset="100%" stop-color="#88C498"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bg)"/>
+
+  <!-- Subtle background grid -->
+  <defs>
+    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1.2" fill="#085B20" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="400" fill="url(#dots)"/>
+
+  <!-- Floor shadow line -->
+  <rect x="0" y="338" width="800" height="62" fill="#D0D8E8" opacity="0.4"/>
+  <line x1="0" y1="338" x2="800" y2="338" stroke="#B8C4D8" stroke-width="1"/>
+
+  <!-- === LARGE BOX STACK (center) === -->
+
+  <!-- Bottom box (largest) -->
+  <!-- Front face -->
+  <rect x="210" y="220" width="240" height="118" rx="4" fill="url(#box1)"/>
+  <!-- Top face (isometric) -->
+  <path d="M 210 220 L 270 185 L 510 185 L 450 220 Z" fill="#F8EDD8"/>
+  <!-- Right face -->
+  <path d="M 450 220 L 510 185 L 510 303 L 450 338 Z" fill="url(#box1side)"/>
+  <!-- Strapping tape vertical -->
+  <rect x="315" y="185" width="22" height="153" fill="#085B20" opacity="0.18"/>
+  <!-- Strapping tape horizontal -->
+  <rect x="210" y="263" width="240" height="16" fill="#085B20" opacity="0.12"/>
+  <rect x="315" y="185" width="22" height="16" fill="#085B20" opacity="0.25"/>
+  <rect x="315" y="263" width="22" height="16" fill="#085B20" opacity="0.25"/>
+  <!-- Label on box -->
+  <rect x="240" y="238" width="120" height="64" rx="4" fill="white" opacity="0.85"/>
+  <rect x="244" y="242" width="112" height="20" rx="2" fill="#085B20"/>
+  <text x="300" y="256" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">VANSH ENTERPRISES</text>
+  <text x="300" y="272" font-family="monospace" font-size="9" fill="#3C3C3C" text-anchor="middle">NOIDA, INDIA</text>
+  <text x="300" y="284" font-family="monospace" font-size="9" fill="#3C3C3C" text-anchor="middle">QTY: 500 PCS</text>
+  <text x="300" y="296" font-family="monospace" font-size="8" fill="#085B20" text-anchor="middle" font-weight="600">▲ THIS SIDE UP ▲</text>
+
+  <!-- Middle box (on top, offset left) -->
+  <rect x="165" y="140" width="185" height="88" rx="4" fill="url(#box2)"/>
+  <path d="M 165 140 L 210 112 L 395 112 L 350 140 Z" fill="#F0FAF5"/>
+  <path d="M 350 140 L 395 112 L 395 200 L 350 228 Z" fill="url(#box2side)"/>
+  <!-- Strapping -->
+  <rect x="248" y="112" width="16" height="116" fill="#085B20" opacity="0.15"/>
+  <rect x="165" y="172" width="185" height="12" fill="#085B20" opacity="0.1"/>
+  <!-- Small label -->
+  <rect x="185" y="155" width="100" height="44" rx="3" fill="white" opacity="0.8"/>
+  <rect x="188" y="158" width="94" height="14" rx="2" fill="#0E7A2C"/>
+  <text x="235" y="169" font-family="'Segoe UI', Arial, sans-serif" font-size="8.5" font-weight="700" fill="white" text-anchor="middle">WOMENSWEAR</text>
+  <text x="235" y="182" font-family="monospace" font-size="8" fill="#3C3C3C" text-anchor="middle">250 UNITS</text>
+  <text x="235" y="193" font-family="monospace" font-size="7.5" fill="#085B20" text-anchor="middle">EXPORT READY</text>
+
+  <!-- Top small box (right, stacked) -->
+  <rect x="370" y="158" width="140" height="70" rx="4" fill="url(#box1)"/>
+  <path d="M 370 158 L 402 135 L 542 135 L 510 158 Z" fill="#FAF0DE"/>
+  <path d="M 510 158 L 542 135 L 542 205 L 510 228 Z" fill="url(#box1side)"/>
+  <rect x="432" y="135" width="14" height="93" fill="#085B20" opacity="0.14"/>
+  <!-- Small label -->
+  <rect x="386" y="172" width="86" height="36" rx="3" fill="white" opacity="0.8"/>
+  <rect x="389" y="175" width="80" height="12" rx="2" fill="#E8673F"/>
+  <text x="429" y="185" font-family="'Segoe UI', Arial, sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">MENSWEAR</text>
+  <text x="429" y="198" font-family="monospace" font-size="7.5" fill="#3C3C3C" text-anchor="middle">150 UNITS</text>
+
+  <!-- === GLOBE (right side) === -->
+  <!-- Globe circle -->
+  <circle cx="650" cy="185" r="95" fill="#C8D8F0" fill-opacity="0.5" stroke="#8AAAD8" stroke-width="1.5"/>
+  <!-- Latitude lines -->
+  <ellipse cx="650" cy="185" rx="95" ry="32" fill="none" stroke="#8AAAD8" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="650" cy="185" rx="95" ry="62" fill="none" stroke="#8AAAD8" stroke-width="1" opacity="0.4"/>
+  <ellipse cx="650" cy="185" rx="95" ry="88" fill="none" stroke="#8AAAD8" stroke-width="1" opacity="0.3"/>
+  <!-- Longitude lines -->
+  <ellipse cx="650" cy="185" rx="32" ry="95" fill="none" stroke="#8AAAD8" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="650" cy="185" rx="65" ry="95" fill="none" stroke="#8AAAD8" stroke-width="1" opacity="0.4"/>
+  <!-- Globe border -->
+  <circle cx="650" cy="185" r="95" fill="none" stroke="#6A8AC8" stroke-width="2"/>
+  <!-- India highlight -->
+  <circle cx="658" cy="175" r="12" fill="#085B20" opacity="0.6"/>
+  <circle cx="658" cy="175" r="6" fill="#41E296" opacity="0.8"/>
+  <!-- Export destination dots -->
+  <circle cx="580" cy="148" r="5" fill="#E8673F" opacity="0.75"/>
+  <circle cx="720" cy="155" r="5" fill="#E8673F" opacity="0.75"/>
+  <circle cx="700" cy="220" r="5" fill="#E8673F" opacity="0.75"/>
+  <circle cx="612" cy="225" r="5" fill="#E8673F" opacity="0.75"/>
+  <!-- Export route lines -->
+  <path d="M 658 175 Q 618 158 580 148" stroke="#085B20" stroke-width="1.5" fill="none" stroke-dasharray="4 3" opacity="0.5"/>
+  <path d="M 658 175 Q 690 160 720 155" stroke="#085B20" stroke-width="1.5" fill="none" stroke-dasharray="4 3" opacity="0.5"/>
+  <path d="M 658 175 Q 690 200 700 220" stroke="#085B20" stroke-width="1.5" fill="none" stroke-dasharray="4 3" opacity="0.5"/>
+  <path d="M 658 175 Q 628 205 612 225" stroke="#085B20" stroke-width="1.5" fill="none" stroke-dasharray="4 3" opacity="0.5"/>
+
+  <!-- === FORWARD ARROWS === -->
+  <path d="M 120 240 L 150 240 M 140 228 L 155 240 L 140 252" stroke="#085B20" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+  <path d="M 125 260 L 148 260 M 140 250 L 153 262 L 140 274" stroke="#085B20" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+
+  <!-- === BOTTOM LABEL === -->
+  <rect x="0" y="360" width="800" height="40" fill="#D0D8E8" opacity="0.55"/>
+  <text x="400" y="386" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#085B20" text-anchor="middle" letter-spacing="1.5" opacity="0.85">EXPORT-READY · PRIVATE LABEL · WORLDWIDE DISPATCH</text>
+</svg>

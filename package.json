@@ -1,0 +1,12 @@
+{
+  "name": "vansh-enterprises-website",
+  "version": "1.0.0",
+  "description": "Marketing website for Vansh Enterprises — apparel manufacturing and export, Noida",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
