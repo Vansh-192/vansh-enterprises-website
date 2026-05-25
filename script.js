@@ -124,11 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const json = await res.json();
 
       if (json.success) {
-        showStatus(
-          'success',
-          '✓ Thank you! Your enquiry has been received. Our team will be in touch within 1–2 business days.'
-        );
-        form.reset();
+        window.location.href = '/thank-you.html';
       } else {
         showStatus('error', json.error || 'Something went wrong. Please try again.');
       }
