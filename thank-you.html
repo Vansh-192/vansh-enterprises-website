@@ -1,275 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enquiry Received — Vansh Enterprises</title>
-  <link rel="icon" type="image/svg+xml" href="logo.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* ── Thank-You Page Styles ─────────────────────────────────── */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    .ty-page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #f7f9f7;
-      padding: 2rem 1.25rem;
-      text-align: center;
-    }
-
-    .ty-card {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.09);
-      padding: 3rem 2.5rem;
-      max-width: 540px;
-      width: 100%;
-    }
-
-    /* Animated check circle */
-    .ty-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #0E7A2C, #41E296);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.75rem;
-      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-    }
-
-    @keyframes popIn {
-      0%   { transform: scale(0); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .ty-icon svg {
-      width: 38px;
-      height: 38px;
-      stroke: #ffffff;
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
-      animation: drawCheck 0.4s 0.3s ease both;
-      stroke-dasharray: 50;
-      stroke-dashoffset: 50;
-    }
-
-    @keyframes drawCheck {
-      to { stroke-dashoffset: 0; }
-    }
-
-    .ty-logo {
-      margin: 0 auto 2rem;
-      display: block;
-      height: 36px;
-      width: auto;
-    }
-
-    .ty-card h1 {
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: #0E7A2C;
-      margin: 0 0 0.75rem;
-      line-height: 1.2;
-    }
-
-    .ty-card .ty-sub {
-      font-size: 1.05rem;
-      color: #444;
-      margin: 0 0 0.5rem;
-      line-height: 1.6;
-    }
-
-    .ty-card .ty-note {
-      font-size: 0.9rem;
-      color: #888;
-      margin: 0 0 2rem;
-    }
-
-    /* Steps */
-    .ty-steps {
-      background: #f4faf6;
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0 2rem;
-      text-align: left;
-    }
-
-    .ty-steps p {
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #0E7A2C;
-      margin: 0 0 0.75rem;
-    }
-
-    .ty-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.65rem;
-      font-size: 0.92rem;
-      color: #333;
-    }
-
-    .ty-step:last-child { margin-bottom: 0; }
-
-    .ty-step-num {
-      flex-shrink: 0;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: #0E7A2C;
-      color: white;
-      font-size: 0.75rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 1px;
-    }
-
-    /* Buttons */
-    .ty-actions {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .ty-btn-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: #0E7A2C;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      transition: background 0.2s;
-    }
-
-    .ty-btn-home:hover { background: #085B20; }
-
-    .ty-btn-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: #25D366;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      transition: background 0.2s;
-    }
-
-    .ty-btn-wa:hover { background: #1ebe57; }
-
-    .ty-divider {
-      height: 1px;
-      background: #e8eeea;
-      margin: 2rem 0;
-    }
-
-    .ty-footer-note {
-      font-size: 0.82rem;
-      color: #aaa;
-    }
-
-    @media (max-width: 480px) {
-      .ty-card { padding: 2rem 1.25rem; }
-      .ty-card h1 { font-size: 1.4rem; }
-      .ty-actions { flex-direction: column; }
-      .ty-btn-home, .ty-btn-wa { justify-content: center; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry Received | Vansh Enterprises</title>
+  <meta name="description" content="Thank you for your enquiry. Vansh Enterprises will respond within one working day with pricing, sampling timeline, and next steps.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://vanshenterprises.net/thank-you">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 </head>
 <body>
+<div id="header-slot"></div>
+<main>
 
-<div class="ty-page">
-  <div class="ty-card">
+  <section class="section-pad" style="min-height:72vh;display:flex;align-items:center">
+    <div class="container" style="max-width:600px;text-align:center">
 
-    <!-- Logo -->
-    <img src="logo.svg" alt="Vansh Enterprises" class="ty-logo" />
-
-    <!-- Check icon with animation -->
-    <div class="ty-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <polyline points="4 12 9 17 20 6" />
-      </svg>
-    </div>
-
-    <!-- Heading -->
-    <h1>Enquiry Successfully Submitted!</h1>
-    <p class="ty-sub">
-      Thank you for reaching out to Vansh Enterprises.<br />
-      Our team will get back to you within <strong>1–2 business days</strong>.
-    </p>
-    <p class="ty-note">A copy of your enquiry has been received at enquiries@vanshenterprises.net</p>
-
-    <!-- What happens next -->
-    <div class="ty-steps">
-      <p>What happens next</p>
-      <div class="ty-step">
-        <div class="ty-step-num">1</div>
-        <span>Our team reviews your brief and requirement details</span>
+      <div class="ty-check-wrap">
+        <div class="ty-check-ring" aria-hidden="true">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
+            <polyline points="4 12 9 17 20 6" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="ty-check-path"/>
+          </svg>
+        </div>
       </div>
-      <div class="ty-step">
-        <div class="ty-step-num">2</div>
-        <span>We prepare a tailored production proposal for you</span>
+
+      <h1 class="mt-6">Enquiry Received</h1>
+      <p class="mt-4" style="font-size:1.1rem;color:var(--color-muted);max-width:480px;margin-left:auto;margin-right:auto">Thank you for reaching out. We'll reply within <strong style="color:var(--color-text)">one working day</strong> with pricing, a sampling timeline, and suggested next steps.</p>
+
+      <div class="highlight-box mt-8" style="text-align:left;max-width:480px;margin-left:auto;margin-right:auto">
+        <p style="font-size:0.9rem"><strong>Tip:</strong> If you have a tech pack, reference images, or fabric swatches to share, send them to <a href="mailto:info@vanshenterprises.net" style="color:var(--color-primary)">info@vanshenterprises.net</a> or via WhatsApp — this helps us prepare a more precise quote.</p>
       </div>
-      <div class="ty-step">
-        <div class="ty-step-num">3</div>
-        <span>We reach out via email within 1–2 business days</span>
+
+      <div class="mt-8" style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://wa.me/919015475588?text=Hi%2C%20I%20just%20submitted%20an%20enquiry%20on%20vanshenterprises.net" class="whatsapp-btn" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.533 5.855L0 24l6.302-1.51A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.373l-.36-.214-3.738.894.948-3.638-.235-.374A9.817 9.817 0 0 1 2.182 12C2.182 6.56 6.56 2.182 12 2.182c5.44 0 9.818 4.378 9.818 9.818 0 5.44-4.378 9.818-9.818 9.818z"/></svg>
+          WhatsApp Us
+        </a>
+        <a href="/" class="btn btn-outline">Back to Home</a>
+      </div>
+
+      <div class="mt-10" style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--color-border);padding-top:2rem">
+        <a href="/faq" style="color:var(--color-primary);font-size:0.875rem;font-weight:500">FAQ →</a>
+        <a href="/sampling-bulk-production" style="color:var(--color-primary);font-size:0.875rem;font-weight:500">Sampling Process →</a>
+        <a href="/quality-control" style="color:var(--color-primary);font-size:0.875rem;font-weight:500">Quality Control →</a>
+        <a href="/apparel-manufacturer-noida" style="color:var(--color-primary);font-size:0.875rem;font-weight:500">Our Services →</a>
       </div>
     </div>
+  </section>
 
-    <!-- Action buttons -->
-    <div class="ty-actions">
-      <a href="/" class="ty-btn-home">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M1 8L8 1l7 7"/><path d="M3 6v7a1 1 0 0 0 1 1h3v-4h2v4h3a1 1 0 0 0 1-1V6"/>
-        </svg>
-        Back to Homepage
-      </a>
-      <a href="https://wa.me/919015475588?text=Hi%2C%20I%20just%20submitted%20an%20enquiry%20on%20vanshenterprises.net%20and%20wanted%20to%20follow%20up"
-         class="ty-btn-wa" target="_blank" rel="noopener noreferrer">
-        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-          <path d="M8 1a7 7 0 0 0-5.84 10.83L1 15l3.32-.87A7 7 0 1 0 8 1zm0 12.75A5.74 5.74 0 0 1 5.07 12.9l-.2-.12-2.1.55.57-2.07-.15-.21A5.75 5.75 0 1 1 8 13.75z"/>
-          <path d="M6 5.8c-.12 0-.3.04-.46.22-.16.18-.62.6-.62 1.46s.63 1.7.72 1.82c.09.12 1.24 1.9 3.01 2.59.42.16.74.26 1 .33.42.12.8.1 1.1.06.34-.04 1.04-.42 1.18-.83.14-.41.14-.76.1-.83-.05-.07-.17-.11-.36-.2-.19-.09-1.04-.51-1.2-.57-.16-.06-.28-.09-.4.09-.12.18-.46.57-.56.69-.1.12-.2.13-.37.04-.18-.09-.74-.27-1.41-.87-.52-.47-.87-1.05-.97-1.23-.1-.17 0-.26.07-.35l.26-.3c.09-.1.12-.18.18-.3.06-.12.03-.22-.01-.31-.04-.09-.4-.97-.55-1.32-.14-.35-.29-.3-.4-.31l-.33-.01z"/>
-        </svg>
-        WhatsApp Us Now
-      </a>
-    </div>
-
-    <div class="ty-divider"></div>
-
-    <p class="ty-footer-note">
-      Need immediate help? Email us at
-      <a href="mailto:enquiries@vanshenterprises.net" style="color:#0E7A2C;">enquiries@vanshenterprises.net</a>
-    </p>
-
-  </div>
-</div>
-
+</main>
+<div id="footer-slot"></div>
+<script src="/components.js" defer></script>
+<script src="/script.js" defer></script>
 </body>
 </html>

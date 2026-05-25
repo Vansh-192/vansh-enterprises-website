@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /thank-you
+Disallow: /leads.json
+
+Sitemap: https://vanshenterprises.net/sitemap.xml
