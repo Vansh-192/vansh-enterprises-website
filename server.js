@@ -3,6 +3,8 @@ const express    = require('express');
 const fs         = require('fs');
 const path       = require('path');
 const nodemailer = require('nodemailer');
+const cron       = require('node-cron');
+const { sendDailyReport } = require('./analytics-report');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -130,4 +132,10 @@ app.listen(PORT, () => {
   console.log(`Vansh Enterprises → http://localhost:${PORT}`);
   console.log(`Enquiries email  → ${NOTIFY_EMAIL}`);
   console.log(`Leads backup     → ${LEADS_FILE}`);
+
+  // ── Daily analytics report — 11:00 AM IST every day ──────────────────────
+  cron.schedule('0 11 * * *', () => {
+    sendDailyReport(transporter).catch(e => console.error('[ANALYTICS CRON]', e.message));
+  }, { timezone: 'Asia/Kolkata' });
+  console.log('Analytics report → scheduled daily at 11:00 AM IST → ankush@vanshenterprises.net');
 });
