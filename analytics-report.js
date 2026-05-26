@@ -18,14 +18,22 @@ const PROPERTY_ID = process.env.GA4_PROPERTY_ID;
 const REPORT_TO   = process.env.REPORT_EMAIL || 'ankush@vanshenterprises.net';
 const LEADS_FILE  = path.join(__dirname, 'leads.json');
 
-// ── GA4 client ────────────────────────────────────────────────────────────────
+// ── GA4 client (OAuth2 — uses your Google account credentials) ───────────────
 function getGA4Client() {
   const { BetaAnalyticsDataClient } = require('@google-analytics/data');
-  if (!process.env.GA_SERVICE_ACCOUNT) throw new Error('GA_SERVICE_ACCOUNT env var not set.');
-  let creds;
-  try   { creds = JSON.parse(Buffer.from(process.env.GA_SERVICE_ACCOUNT, 'base64').toString('utf8')); }
-  catch { creds = JSON.parse(process.env.GA_SERVICE_ACCOUNT); }
-  return new BetaAnalyticsDataClient({ credentials: creds });
+  const { OAuth2Client }            = require('google-auth-library');
+
+  const clientId     = process.env.GA_CLIENT_ID;
+  const clientSecret = process.env.GA_CLIENT_SECRET;
+  const refreshToken = process.env.GA_REFRESH_TOKEN;
+
+  if (!clientId || !clientSecret || !refreshToken)
+    throw new Error('Missing GA_CLIENT_ID, GA_CLIENT_SECRET or GA_REFRESH_TOKEN env vars.');
+
+  const oauth2 = new OAuth2Client(clientId, clientSecret);
+  oauth2.setCredentials({ refresh_token: refreshToken });
+
+  return new BetaAnalyticsDataClient({ auth: oauth2 });
 }
 
 async function runReport(client, params) {
